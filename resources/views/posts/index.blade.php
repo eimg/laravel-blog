@@ -1,12 +1,14 @@
-{{-- resources/views/posts/index.blade.php --}}
-
 @extends('layouts.app')
 @section('content')
     <div class="container">
         @foreach($posts as $post)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <b>{{ $post->title }}</b>
+                    <b>
+                        <a href="{{ url("/posts/view/$post->id") }}">
+                            {{ $post->title }}
+                        </a>
+                    </b>
                 </div>
                 <div class="panel-body">
                     {{ $post->body }}
@@ -16,5 +18,7 @@
                 </div>
             </div>
         @endforeach
+
+        {{ $posts->links() }}
     </div>
 @endsection

@@ -15,6 +15,13 @@ class DatabaseSeeder extends Seeder
         $faker = FakerFactory::create();
 
         # php artisan migrate:refresh --seed
+        for($i=0; $i<20; $i++) {
+            $comment = new App\Comment();
+            $comment->comment = $faker->paragraph;
+            $comment->post_id = rand(1, 10);
+            $comment->save();
+        }
+
         for($i=0; $i<10; $i++) {
             $post = new App\Post();
             $post->title = $faker->sentence;

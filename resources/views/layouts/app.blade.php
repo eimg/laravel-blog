@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/fontawesome.min.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -50,7 +51,12 @@
                             <a href="{{ url('/categories') }}">Category List</a>
                         </li>
                         <li>
-                            <a href="{{ url('/posts/add') }}"><b>+ New Post</b></a>
+                            <a href="{{ url('/posts/add') }}">
+                                <b>
+                                    <i class="fas fa-plus-circle text-primary"></i>
+                                    New Post
+                                </b>
+                            </a>
                         </li>
                     </ul>
 

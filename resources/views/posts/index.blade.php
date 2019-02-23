@@ -12,6 +12,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <b>
+                        <i class="far fa-newspaper"></i>
                         <a href="{{ url("/posts/view/$post->id") }}">
                             {{ $post->title }}
                         </a>
@@ -21,7 +22,13 @@
                     {{ $post->body }}
                 </div>
                 <div class="panel-footer">
-                    <small>{{ $post->created_at }}</small>
+                    <small>{{ $post->created_at->diffForHumans() }}</small>
+                    <b>in {{ $post->category->name or 'Unknown' }}</b>
+
+                    <div class="pull-right">
+                        <i class="fas fa-comment"></i>
+                        {{ count($post->comments) }}
+                    </div>
                 </div>
             </div>
         @endforeach

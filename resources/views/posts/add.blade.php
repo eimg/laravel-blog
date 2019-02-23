@@ -13,22 +13,25 @@
         <form method="post">
             {{ csrf_field() }}
             <div class="form-group">
-                <label>Title</label>
+                <label><i class="far fa-newspaper"></i> Title</label>
                 <input type="text" name="title" class="form-control">
             </div>
             <div class="form-group">
-                <label>Body</label>
+                <label><i class="fas fa-align-right"></i> Body</label>
                 <textarea name="body" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                <label>Category</label>
+                <label><i class="fas fa-layer-group"></i> Category</label>
                 <select class="form-control" name="category_id">
                     <option value="1">Technology</option>
                     <option value="2">Internet</option>
                 </select>
             </div>
 
-            <input type="submit" value="Add Post" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Add Post
+            </button>
         </form>
     </div>
 @endsection

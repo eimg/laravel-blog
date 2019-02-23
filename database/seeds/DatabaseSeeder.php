@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
             $post->save();
         }
 
+        for($i=0; $i<5; $i++) {
+            $category = new App\Category();
+            $category->name = ucwords( $faker->word );
+            $category->save();
+        }
+
         // $this->call(UsersTableSeeder::class);
     }
 }

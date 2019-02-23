@@ -44,7 +44,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="{{ url('/posts/add') }}">+ New Post</a>
+                            <a href="{{ url('/posts') }}">Post List</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/categories') }}">Category List</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/posts/add') }}"><b>+ New Post</b></a>
                         </li>
                     </ul>
 

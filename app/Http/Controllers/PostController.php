@@ -25,7 +25,7 @@ class PostController extends Controller
         }
 
         $post = new Post();
-        $post->title = request()->title; // $_POST['title']
+        $post->title = request()->title;
         $post->body = request()->body;
         $post->category_id = request()->category_id;
         $post->save();
@@ -33,12 +33,31 @@ class PostController extends Controller
         return redirect('/posts');
     }
 
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        return view('posts.edit', [
+            'post' => $post
+        ]);
+    }
+
+    public function update($id)
+    {
+        $post = Post::find($id);
+        $post->title = request()->title;
+        $post->body = request()->body;
+        $post->category_id = request()->category_id;
+        $post->save();
+
+        return redirect("/posts/view/$id");
+    }
+
     public function delete($id)
     {
         $post = Post::find($id);
         $post->delete();
 
-        return redirect('/posts');
+        return redirect('/posts')->with('info', 'A post deleted');
     }
 
     public function index()

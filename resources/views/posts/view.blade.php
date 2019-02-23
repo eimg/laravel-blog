@@ -8,9 +8,12 @@
             <div class="panel-body">
                 {{ $post->body }}
             </div>
-            <div class="panel-footer">
-                <small>{{ $post->created_at }}</small>
+            <div class="panel-footer clearfix">
+                <small>{{ $post->created_at->diffForHumans() }}</small>
                 <div class="pull-right">
+                    <a href="{{ url("/posts/edit/$post->id") }}" class="btn btn-default">
+                        Edit
+                    </a>
                     <a href="{{ url("/posts/delete/$post->id") }}" class="btn btn-danger">
                         Del
                     </a>

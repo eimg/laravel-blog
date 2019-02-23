@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+        @if(session('info'))
+            <div class="alert alert-info">
+                {{ session('info') }}
+            </div>
+        @endif
+
         @foreach($posts as $post)
             <div class="panel panel-default">
                 <div class="panel-heading">

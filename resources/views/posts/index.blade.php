@@ -19,7 +19,7 @@
                     </b>
                 </div>
                 <div class="panel-body">
-                    {{ $post->body }}
+                    {!! $post->body !!}
                 </div>
                 <div class="panel-footer">
                     <small>{{ $post->created_at->diffForHumans() }}</small>

@@ -7,6 +7,11 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth")->except(['index', 'view']);
+    }
+
     public function add()
     {
         return view('posts.add');

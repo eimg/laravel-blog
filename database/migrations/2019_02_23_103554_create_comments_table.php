@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->text('comment');
             $table->integer('post_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

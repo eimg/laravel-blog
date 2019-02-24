@@ -15,10 +15,23 @@ class DatabaseSeeder extends Seeder
         $faker = FakerFactory::create();
 
         # php artisan migrate:refresh --seed
+        $bob = new App\User();
+        $bob->name = "Bob";
+        $bob->email = "bob@gmail.com";
+        $bob->password = bcrypt("123456");
+        $bob->save();
+
+        $alice = new App\User();
+        $alice->name = "Alice";
+        $alice->email = "alice@gmail.com";
+        $alice->password = bcrypt("123456");
+        $alice->save();
+
         for($i=0; $i<20; $i++) {
             $comment = new App\Comment();
             $comment->comment = $faker->paragraph;
             $comment->post_id = rand(1, 10);
+            $comment->user_id = rand(1, 2);
             $comment->save();
         }
 

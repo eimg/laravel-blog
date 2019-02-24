@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/fontawesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/summernote.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -96,6 +97,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ '/js/app.js' }}"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="{{ asset('/js/summernote.min.js') }}"></script>
+    <script>
+        $('textarea').summernote();
+    </script>
 </body>
 </html>

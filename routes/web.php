@@ -11,12 +11,16 @@ Route::get('/posts/edit/{id}', 'PostController@edit');
 Route::post('/posts/edit/{id}', 'PostController@update');
 Route::get('/posts/delete/{id}', 'PostController@delete');
 
-# Category Routs
+# Category Routes
 Route::get('/categories', 'CategoryController@index');
 Route::get('/categories/add', 'CategoryController@add');
 Route::post('/categories/add', 'CategoryController@create');
 Route::get('/categories/edit/{id}', 'CategoryController@edit');
 Route::post('/categories/edit/{id}', 'CategoryController@update');
 Route::get('/categories/delete/{id}', 'CategoryController@delete');
+
+# Comment Routes
+Route::post('/comments/add', 'CommentController@create');
+Route::get('/comments/delete/{id}', 'CommentController@delete');
 
 Auth::routes();
